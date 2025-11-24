@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fa;
+        }
+
+        /* Header Section */
+        .header{
+            position: relative;
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1600585154356-596af9009e82?auto=format&w=1500') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header::after{
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .header-content{
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1{
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 0;
+            animation: slideDown 1.5s ease;
+        }
+
+        .header p{
+            margin-top: 15px;
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        /* Contact Section */
+        .contact-section{
+            padding: 50px;
+            text-align: center;
+        }
+
+        .info-box{
+            background: white;
+            width: 60%;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: floatUp 1.3s ease;
+        }
+
+        .contact-section h2{
+            margin-bottom: 25px;
+        }
+
+        .info-item{
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Buttons */
+        .btn{
+            margin-top: 25px;
+            padding: 12px 30px;
+            border: none;
+            background: #0077cc;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background: #005fa3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-30px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        @keyframes floatUp {
+            from {transform: translateY(50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        footer{
+            margin-top: 40px;
+            background: #003f66;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        
+        <div class="header-content">
+             <h1>Student Result Management</h1>
+            
+            <h2>Anand Mercantile College of Science, Management & Computer Technology </h2>
+            <p>Check your semester results instantly and securely</p>
+             <button class="btn">View Results</button>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="contact-section">
+        <h2>College Contact Information</h2>
+
+        <div class="info-box">
+            <div class="info-item"><strong>Email:</strong> amcost.anand@gmail.com</div>
+            <div class="info-item"><strong>Phone:</strong> 02692 257 658</div>
+        </div>
+
+       
+    </div>
+
+    <footer>
+        © 2025 ABC College – All Rights Reserved
+    </footer>
+
+</body>
+</html>
