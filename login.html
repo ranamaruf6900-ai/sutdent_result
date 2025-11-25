@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+     
+    <style>
+       body {
+    margin: 10px;
+    padding: 10px;
+    background-image: url('logo.jpg');
+    background-size: 690px auto;      /* image covers entire screen */
+    background-repeat: no-repeat; /* prevent tiling */
+    background-position: center;  /* center the image */
+    font-family: Arial, sans-serif;
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
+
+        /* Hide sections initially */
+        .page { display: none; }
+
+        /* Login Page Styles */
+        .login-box{
+            width: 350px;
+            padding: 30px;
+            background: white;
+            margin: 120px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .btn{
+            padding: 12px 30px;
+            border: none;
+            background: #0077cc;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover{ background: #005fa3; }
+
+        /* Home Page Styles (same as your code) */
+        .header{
+            position: relative;
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1600585154356-596af9009e82?auto=format&w=1500') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .header::after{
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .header-content{ position: relative; z-index: 2; }
+        .header h1{ font-size: 3rem; margin: 0; }
+        .header h2{ font-size: 1.7rem; margin-top: 10px; }
+        .contact-section{ padding: 50px; text-align: center; }
+        .info-box{
+            width: 60%;
+            margin: auto;
+            padding: 25px;
+            background: rgb(6, 163, 190);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        footer{
+            margin-top: 40px;
+            background: #003f66;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="logo-side">
+         </div>
+          <div class="logo-side">
+            
+          </div>
+
+    </div>
+
+    <!-- 🔹 PAGE 1: LOGIN -->
+    <div id="loginPage" class="page" style="display: block;">
+        <div class="login-box">
+            <h2>Login</h2>
+
+            <input type="text" id="username" placeholder="Enter Username">
+            <input type="password" id="password" placeholder="Enter Password">
+
+            <button class="btn" onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <!-- 🔹 PAGE 2: HOME PAGE -->
+    <div id="homePage" class="page">
+
+        <div class="header">
+            <div class="header-content">
+                <h1>Student Result Management</h1>
+                <h2>Anand Mercantile College of Science, Management & Computer Technology</h2>
+                <p>Check your semester results instantly and securely</p>
+
+                <button class="btn">View Results</button>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>College Contact Information</h2>
+
+            <div class="info-box">
+                <div class="info-item"><strong>Email:</strong> amcost.anand@gmail.com</div>
+                <div class="info-item"><strong>Phone:</strong> 02692 257 658</div>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 ABC College – All Rights Reserved
+        </footer>
+
+    </div>
+
+    <!-- 🔹 JavaScript (Page Switching) -->
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            // Simple demo login
+            if(user === "admin" && pass === "1234"){
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("homePage").style.display = "block";
+            } else {
+                alert("Invalid Login. Try Username:  | Password: 152816 ");
+            }
+        }
+    </script>
+
+</body>
+</html>
