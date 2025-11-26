@@ -3,169 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Result Management System</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-     
+    <title>Modern Sign In / Sign Up</title>
     <style>
-       body {
-    margin: 10px;
-    padding: 10px;
-    background-image: url('logo.jpg');
-    background-size: 690px auto;      /* image covers entire screen */
-    background-repeat: no-repeat; /* prevent tiling */
-    background-position: center;  /* center the image */
-    font-family: Arial, sans-serif;
-}
-.login-container {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-
-
-        /* Hide sections initially */
-        .page { display: none; }
-
-        /* Login Page Styles */
-        .login-box{
-            width: 350px;
-            padding: 30px;
-            background: white;
-            margin: 120px auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        input{
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
-
-        .btn{
-            padding: 12px 30px;
-            border: none;
-            background: #0077cc;
-            color: white;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn:hover{ background: #005fa3; }
-
-        /* Home Page Styles (same as your code) */
-        .header{
-            position: relative;
-            height: 80vh;
-            background: url('https://images.unsplash.com/photo-1600585154356-596af9009e82?auto=format&w=1500') center/cover no-repeat;
+        /* General Styles */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            min-height: 100vh;
+        }
+        
+        /* Container for the whole form area */
+        .container {
+            display: flex;
+            width: 800px;
+            max-width: 90%;
+            min-height: 500px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensures the rounded corners apply correctly */
+        }
+        
+        /* Left Panel - Sign In */
+        .sign-in-panel {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
-        .header::after{
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
+        
+        .sign-in-panel h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        .header-content{ position: relative; z-index: 2; }
-        .header h1{ font-size: 3rem; margin: 0; }
-        .header h2{ font-size: 1.7rem; margin-top: 10px; }
-        .contact-section{ padding: 50px; text-align: center; }
-        .info-box{
-            width: 60%;
-            margin: auto;
-            padding: 25px;
-            background: rgb(6, 163, 190);
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        footer{
-            margin-top: 40px;
-            background: #003f66;
-            color: white;
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #f0f0f0;
+        }
+
+        .divider-text {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Form Fields */
+        .input-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .input-field {
+            width: 100%;
             padding: 15px;
-            text-align: center;
+            border: none;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding/border in the element's total width/height */
         }
-    </style>
 
-</head>
-<body>
-    <div class="main-container">
-        <div class="logo-side">
-         </div>
-          <div class="logo-side">
-            
-          </div>
+        /* Sign In Button */
+        .sign-in-btn {
+            background-color: #5b28d7; /* Primary purple color */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
 
-    </div>
+        .sign-in-btn:hover {
+            background-color: #481fb0;
+        }
 
-    <!-- 🔹 PAGE 1: LOGIN -->
-    <div id="loginPage" class="page" style="display: block;">
-        <div class="login-box">
-            <h2>Login</h2>
+        .forgot-password {
+            font-size: 14px;
+            color: #5b28d7;
+            text-decoration: none;
+            margin-top: 10px;
+        }
 
-            <input type="text" id="username" placeholder="Enter Username">
-            <input type="password" id="password" placeholder="Enter Password">
+        /* Right Panel - Sign Up */
+        .sign-up-panel {
+            flex: 1;
+            background-color: #5b28d7; /* Primary purple color */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            /* Mimic the rounded side visually */
+            border-top-right-radius: 15px; 
+            border-bottom-right-radius: 15px;
+            /* Note: Achieving the exact smooth, asymmetric curve seen in the image requires more advanced CSS (e.g., ::before or SVG) */
+        }
 
-            <button class="btn" onclick="login()">Login</button>
-        </div>
-    </div>
+        .sign-up-panel h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
 
-    <!-- 🔹 PAGE 2: HOME PAGE -->
-    <div id="homePage" class="page">
+        .sign-up-panel p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
 
-        <div class="header">
-            <div class="header-content">
-                <h1>Student Result Management</h1>
-                <h2>Anand Mercantile College of Science, Management & Computer Technology</h2>
-                <p>Check your semester results instantly and securely</p>
+        /* Sign Up Button (Inverse style) */
+        .sign-up-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 40px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
 
-                <button class="btn">View Results</button>
-            </div>
-        </div>
+        .sign-up-btn:hover {
+            background-color: white;
+            color: #5b28d7;
+        }
+        
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                min-height: 80vh;
+                width: 90%;
+            }
 
-        <div class="contact-section">
-            <h2>College Contact Information</h2>
+            .sign-in-panel, .sign-up-panel {
+                padding: 30px 20px;
+            }
 
-            <div class="info-box">
-                <div class="info-item"><strong>Email:</strong> amcost.anand@gmail.com</div>
-                <div class="info-item"><strong>Phone:</strong> 02692 257 658</div>
-            </div>
-        </div>
+            .sign-up-panel {
+                /* On small screens, put the Sign Up panel at the bottom and make it full width */
+                border-radius: 0 0 15px 15px; 
+            }
 
-        <footer>
-            © 2025 ABC College – All Rights Reserved
-        </footer>
-
-    </div>
-
-    <!-- 🔹 JavaScript (Page Switching) -->
-    <script>
-        function login() {
-            let user = document.getElementById("username").value;
-            let pass = document.getElementById("password").value;
-
-            // Simple demo login
-            if(user === "admin" && pass === "1234"){
-                document.getElementById("loginPage").style.display = "none";
-                document.getElementById("homePage").style.display = "block";
-            } else {
-                alert("Invalid Login. Try Username:  | Password: 152816 ");
+            .sign-in-panel {
+                border-radius: 15px 15px 0 0; 
             }
         }
-    </script>
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="sign-in-panel">
+            <h2>Sign In</h2>
+
+            <div class="social-icons">
+                <a href="#" class="social-icon" style="font-weight: bold;">G+</a> <a href="#" class="social-icon" style="font-weight: bold;">f</a>  <a href="#" class="social-icon" style="font-size: 24px;">&#9737;</a> <a href="#" class="social-icon" style="font-weight: bold;">in</a> </div>
+            
+            <p class="divider-text">or use your email password</p>
+
+            <div class="input-group">
+                <input type="email" class="input-field" placeholder="Email" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" class="input-field" placeholder="Password" required>
+            </div>
+
+            <a href="#" class="forgot-password">Forgot Your Password?</a>
+            
+            <button type="submit" class="sign-in-btn">SIGN IN</button>
+        </div>
+        
+        <div class="sign-up-panel">
+            <h1>Hello, Friend!</h1>
+            <p>
+                Register with your personal details to use all 
+                of site features
+            </p>
+            <button class="sign-up-btn">SIGN UP</button>
+        </div>
+
+    </div>
 
 </body>
 </html>
